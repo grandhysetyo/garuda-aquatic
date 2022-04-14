@@ -60,44 +60,50 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($sliders as $slider)
+                            @if (count($sliders)> 0)
+                                @foreach ($sliders as $slider)
+                                    <tr>
+                                        <th
+                                            class="h-20 w-20 border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap m-4 text-left flex items-center">
+                                            <img src="/images/sliders/{{ $slider->filename }}"
+                                                class="h-20 w-20 bg-white rounded border" alt="..." />
+                                        </th>
+                                        <td
+                                            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                            {{ $slider->title }}
+                                        </td>
+                                        <td
+                                            class="w-1/3 border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-normal p-4">
+                                            {{ $slider->description }}
+                                        </td>
+                                        <td
+                                            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                                            <div class="flex">
+                                                <a href="{{ route('edit-slider', $slider->id) }}"
+                                                    class="text-green-400 block py-1 px-3">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>                                            
+                                                <button class="text-red-600 block py-1 px-3" type="button" onclick="toggleModal('delete','{{ route('delete-slider', $slider->id) }}')">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                                @if ($slider->status == 1)
+                                                    <button class="text-blue-600 block py-1 px-3" type="button" onclick="toggleModal('deactive','{{ route('toggle-slider', ['id' => $slider->id, 'status' => 0]) }}')">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                @else
+                                                    <button href="#pablo" class="text-blue-600 block py-1 px-3" type="button" onclick="toggleModal('active','{{ route('toggle-slider', ['id' => $slider->id, 'status' => 1]) }}')">
+                                                        <i class="fas fa-eye-slash"></i>
+                                                    </button>
+                                                @endif
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach   
+                            @else
                                 <tr>
-                                    <th
-                                        class="h-20 w-20 border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap m-4 text-left flex items-center">
-                                        <img src="/images/sliders/{{ $slider->filename }}"
-                                            class="h-20 w-20 bg-white rounded border" alt="..." />
-                                    </th>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        {{ $slider->title }}
-                                    </td>
-                                    <td
-                                        class="w-1/3 border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-normal p-4">
-                                        {{ $slider->description }}
-                                    </td>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                                        <div class="flex">
-                                            <a href="{{ route('edit-slider', $slider->id) }}"
-                                                class="text-green-400 block py-1 px-3">
-                                                <i class="fas fa-edit"></i>
-                                            </a>                                            
-                                            <button class="text-red-600 block py-1 px-3" type="button" onclick="toggleModal('delete','{{ route('delete-slider', $slider->id) }}')">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                            @if ($slider->status == 1)
-                                                <button class="text-blue-600 block py-1 px-3" type="button" onclick="toggleModal('deactive','{{ route('toggle-slider', ['id' => $slider->id, 'status' => 0]) }}')">
-                                                    <i class="fas fa-eye"></i>
-                                                </button>
-                                            @else
-                                                <button href="#pablo" class="text-blue-600 block py-1 px-3" type="button" onclick="toggleModal('active','{{ route('toggle-slider', ['id' => $slider->id, 'status' => 1]) }}')">
-                                                    <i class="fas fa-eye-slash"></i>
-                                                </button>
-                                            @endif
-                                        </div>
-                                    </td>
+                                <td colspan="4" class="text-center py-9">No data found</td>
                                 </tr>
-                            @endforeach                            
+                            @endif                           
                         </tbody>
                     </table>
                 </div>

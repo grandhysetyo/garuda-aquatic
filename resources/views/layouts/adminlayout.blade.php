@@ -122,14 +122,7 @@
                                 <i class="fas fa-home opacity-75 mr-2 text-sm"></i>                                
                                 Home
                             </a>
-                        </li>
-                        <li class="items-center">
-                            <a href="{{ url('/admin/contact-us') }}"
-                                class="{{ (request()->is('admin/contact-us')) ? 'text-second' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-second">
-                                <i class="fas fa-address-book opacity-75 mr-2 text-sm"></i>
-                                Contact Us
-                            </a>
-                        </li>
+                        </li>                        
 
                         <li class="items-center">
                             <a href="{{ url('/admin/gallery') }}"

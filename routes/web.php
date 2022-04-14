@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +61,11 @@ Route::post('/admin/gallery/store', [GalleryController::class, 'store'])->name('
 Route::put('/admin/gallery/update/{id}', [GalleryController::class, 'update'])->name('update-gallery')->middleware('auth');
 Route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete'])->name('delete-gallery')->middleware('auth');
 Route::get('/admin/gallery/toggle/{id}/{status}', [GalleryController::class, 'toggleSlide'])->name('toggle-gallery')->middleware('auth');
+
+Route::get('/admin/news', [NewsController::class, 'index'])->name('news')->middleware('auth');
+Route::get('/admin/news/create', [NewsController::class, 'create'])->name('create-news')->middleware('auth');
+Route::get('/admin/news/edit/{id}', [NewsController::class, 'edit'])->name('edit-news')->middleware('auth');
+Route::post('/admin/news/store', [NewsController::class, 'store'])->name('store-news')->middleware('auth');
+Route::put('/admin/news/update/{id}', [NewsController::class, 'update'])->name('update-news')->middleware('auth');
+Route::get('/admin/news/delete/{id}', [NewsController::class, 'delete'])->name('delete-news')->middleware('auth');
+Route::get('/admin/news/toggle/{id}/{status}', [NewsController::class, 'toggleSlide'])->name('toggle-news')->middleware('auth');
