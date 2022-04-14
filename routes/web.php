@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\GalleryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,3 +52,11 @@ Route::post('/admin/home/store', [SectionController::class, 'store'])->name('sto
 Route::put('/admin/home/update/{id}', [SectionController::class, 'update'])->name('update-section')->middleware('auth');
 Route::get('/admin/home/delete/{id}', [SectionController::class, 'delete'])->name('delete-section')->middleware('auth');
 Route::get('/admin/home/toggle/{id}/{status}', [SectionController::class, 'toggleSlide'])->name('toggle-section')->middleware('auth');
+
+Route::get('/admin/gallery', [GalleryController::class, 'index'])->name('gallery')->middleware('auth');
+Route::get('/admin/gallery/create', [GalleryController::class, 'create'])->name('create-gallery')->middleware('auth');
+Route::get('/admin/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('edit-gallery')->middleware('auth');
+Route::post('/admin/gallery/store', [GalleryController::class, 'store'])->name('store-gallery')->middleware('auth');
+Route::put('/admin/gallery/update/{id}', [GalleryController::class, 'update'])->name('update-gallery')->middleware('auth');
+Route::get('/admin/gallery/delete/{id}', [GalleryController::class, 'delete'])->name('delete-gallery')->middleware('auth');
+Route::get('/admin/gallery/toggle/{id}/{status}', [GalleryController::class, 'toggleSlide'])->name('toggle-gallery')->middleware('auth');
