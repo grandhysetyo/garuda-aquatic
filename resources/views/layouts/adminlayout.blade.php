@@ -59,10 +59,10 @@
                         </a>
                         <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
                             id="user-responsive-dropdown">
-                            <a href="#pablo"
+                            <a href="#"
                                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Profile</a>
                             <div class="h-0 my-2 border border-solid border-gray-100"></div>
-                            <a href="#pablo"
+                            <a href="{{ route('logout') }}"
                                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Logout</a>
                         </div>
                     </li>
@@ -168,17 +168,11 @@
                         </a>
                         <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
                             id="user-dropdown">
-                            <a href="#pablo"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Action</a><a
-                                href="#pablo"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Another
-                                action</a><a href="#pablo"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Something
-                                else here</a>
-                            <div class="h-0 my-2 border border-solid border-gray-100"></div>
-                            <a href="#pablo"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Seprated
-                                link</a>
+                            <a href="#"
+                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Profile</a>
+                            <a
+                                href="{{ route('logout') }}"
+                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700">Logout</a>
                         </div>
                     </ul>
                 </div>
