@@ -122,6 +122,7 @@
                       @endif        
                     </tbody>
                 </table>
+                {!! $sections->links('pagination::custom') !!}
             </div>
         </div>
     </div>

@@ -106,6 +106,7 @@
                       @endif        
                     </tbody>
                 </table>
+                {!! $news->links('pagination::custom') !!}
             </div>
         </div>
     </div>

@@ -106,6 +106,7 @@
                             @endif                           
                         </tbody>
                     </table>
+                    {!! $sliders->links('pagination::custom') !!}
                 </div>
             </div>
         </div>

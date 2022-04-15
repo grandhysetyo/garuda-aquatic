@@ -74,7 +74,7 @@
                             <button type="submit" class="bg-green-500 px-6 py-2 rounded text-white uppercase font-bold">Submit</button>
                           </div>
                           <div class="px-4 mt-10">
-                            <a href="{{ url('/admin/slider') }}" class="block bg-gray-300 px-6 py-2 rounded text-gray-50 uppercase font-bold">Cancel</a>
+                            <a href="{{ route('slider') }}" class="block bg-gray-300 px-6 py-2 rounded text-gray-50 uppercase font-bold">Cancel</a>
                           </div>
                         </div>
                     </form>

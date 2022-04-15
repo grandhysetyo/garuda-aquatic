@@ -118,6 +118,7 @@
                       @endif        
                     </tbody>
                 </table>
+                {!! $gallerys->links('pagination::custom') !!}
             </div>
         </div>
     </div>
