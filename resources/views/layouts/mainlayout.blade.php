@@ -8,6 +8,7 @@
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Garuda Aquatic | @yield('title')</title>
+    @yield('style')
 </head>
 
 <body>
@@ -15,7 +16,7 @@
     <nav class="bg-white border-gray-200 px-4 lg:px-40 mx-auto mb-1 py-2.5 rounded shadow-md">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="https://flowbite.com" class="flex items-center">
-                <img src="{{ asset('images/logo.jpeg') }}" class="mr-3 h-6 sm:h-9" alt="Garuda Aquatic Logo">
+                <img src="{{ asset('images/logo.png') }}" class="mr-3 h-6 sm:h-9" alt="Garuda Aquatic Logo">
                 <span class="self-center text-xl font-semibold whitespace-nowrap">Garuda Aquatic</span>
             </a>
             <div class="flex md:order-2">

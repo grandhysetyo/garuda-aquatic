@@ -1,23 +1,44 @@
 @extends('layouts.mainlayout')
 
-@section('title','Home')
+@section('title', 'Home')
+@section('style')
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+@endsection
 @section('content')
     <!-- Slider -->
-    <div class="bg-cover bg-no-repeat" style="background-image: url('{{ asset('images/bg-slider.png') }}')">
-        <div class="swiper mySwiper container mt-2 lg:px-40 mx-auto h-96">
+    <div class="relative bg-cover bg-no-repeat bg-opacity-30 px-12 lg:px-44 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:right-0 before:bg-black/20" style="background-image: url('{{ asset('images/bg-slider.png') }}')">
+        <div class="swiper mySwiper container h-96">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">
+                    <div class="relative w-full h-full">
+                        <div class="flex flex-col md:flex-row text-center md:text-left items-center justify-center h-full">
+                            <div class="w-full md:w-1/2 ">
+                                <h1 class="text-white font-bold">Welcome to Garuda Aquatic</h1>
+                                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur officia assumenda, natus quam amet!</p>
+                                <button class="bg-first px-4 py-2 text-white mt-3 rounded-md">Contact Us</button>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img class="w-3/5 md:w-10/12 rounded-lg mx-auto" src="{{ asset('images/boiga-multo-maculata-snake-closeup-natural-background-boiga-multo-maculata-closeup.jpg') }}" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="relative w-full h-full">
+                        <div class="flex flex-col md:flex-row text-center md:text-left items-center justify-center h-full">
+                            <div class="w-full md:w-1/2 ">
+                                <h1 class="text-white font-bold">Welcome to Garuda Aquatic</h1>
+                                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur officia assumenda, natus quam amet!</p>
+                                <button class="bg-first px-4 py-2 text-white mt-3 rounded-md">Contact Us</button>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img class="w-3/5 md:w-10/12 rounded-lg mx-auto" src="{{ asset('images/boiga-multo-maculata-snake-closeup-natural-background-boiga-multo-maculata-closeup.jpg') }}" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>    
+                </div>                
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 
@@ -210,15 +231,22 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript">
-        $(document).ready(() => {
+    <script type="module">
+        import Swiper from '{{ asset('lib/swiper/swiper-bundle.esm.browser.min.js') }}';
+
+        function initSwiper() {
             let swiper = new Swiper(".mySwiper", {
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
                 },
             });
+        }
+        $(document).ready(() => {
+            initSwiper();
         });
     </script>
-@endsection
+    <script type="text/javascript">
 
+    </script>
+@endsection

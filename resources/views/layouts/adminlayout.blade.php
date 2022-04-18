@@ -86,12 +86,12 @@
                             </div>
                         </div>
                     </div>
-                    <form class="mt-6 mb-4 md:hidden">
+                    {{-- <form class="mt-6 mb-4 md:hidden">
                         <div class="mb-3 pt-0">
                             <input type="text" placeholder="Search"
                                 class="border-0 px-3 py-2 h-12 border-solid border-gray-500 placeholder-gray-300 text-gray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal" />
                         </div>
-                    </form>
+                    </form> --}}
                     <!-- Divider -->
                     <hr class="my-4 md:min-w-full" />
                     <!-- Heading -->
@@ -148,7 +148,7 @@
                 class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
                 <div class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4">
                     <a class="text-white text-sm uppercase hidden lg:inline-block font-semibold" href="#">Dashboard</a>
-                    <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
+                    {{-- <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
                         <div class="relative flex w-full flex-wrap items-stretch">
                             <span
                                 class="z-10 h-full leading-snug font-normal text-center text-gray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"><i
@@ -156,7 +156,7 @@
                             <input type="text" placeholder="Search here..."
                                 class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 relative bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10" />
                         </div>
-                    </form>
+                    </form> --}}
                     <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
                         <a class="text-gray-500 block" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
                             <div class="items-center flex">
