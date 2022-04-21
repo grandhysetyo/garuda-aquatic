@@ -19,16 +19,16 @@ use App\Http\Controllers\NewsController;
 */
 
 Route::get('/', function () {
-    return view('frontoffice.home');
+    return view('frontoffice2.home');
 });
 Route::get('/gallery/farm', function () {
-    return view('frontoffice.gallery_farm');
+    return view('frontoffice2.gallery');
 });
 Route::get('/gallery/product', function () {
-    return view('frontoffice.gallery_product');
+    return view('frontoffice2.gallery');
 });
 Route::get('/contact-us', function () {
-    return view('frontoffice.contact');
+    return view('frontoffice2.contact');
 });
 
 // Backoffice

@@ -20,6 +20,7 @@
         "tailwindcss": "^3.0.23"
     },
     "dependencies": {
-        "@popperjs/core": "^2.11.5"
+        "@popperjs/core": "^2.11.5",
+        "lightbox2": "^2.11.3"
     }
 }
