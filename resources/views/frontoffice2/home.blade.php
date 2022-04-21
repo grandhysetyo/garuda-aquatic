@@ -158,7 +158,7 @@
                         alt="" srcset="">
                 </div>
                 <div class="w-full py-3 lg:py-0 lg:w-1/2 lg:px-16">
-                    <span class="font-normal text-sm text-first">Why Us</span>
+                    <span class="font-normal text-sm text-first">How to Order</span>
                     <h1 class="font-bold text-third text-3xl mb-6">Lorem ipsum dolor sit amet consectetur</h1>
                     <p class="font-normal text-four mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Quidem unde accusantium consequuntur blanditiis. Magnam maiores, culpa sed fuga aspernatur

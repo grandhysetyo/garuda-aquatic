@@ -37,20 +37,24 @@
                 <ul
                     class="flex flex-col mt-4 lg:items-center lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium">
                     <li class="flex justify-end items-center">
-                        <a href="#" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
+                        <a href="{{ url('/') }}" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
                             aria-current="page">Home</a>
                     </li>
                     <li class="flex justify-end items-center">
-                        <a href="#" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
+                        <a href="{{ url('/#about') }}" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
                             aria-current="page">About</a>
                     </li>
                     <li class="flex justify-end items-center">
-                        <a href="#" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
+                        <a href="{{ url('/#why-us') }}" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
                             aria-current="page">Why Us</a>
                     </li>
                     <li class="flex justify-end items-center">
-                        <a href="#" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
-                            aria-current="page">Service</a>
+                        <a href="{{ url('/#services') }}" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
+                            aria-current="page">Services</a>
+                    </li>
+                    <li class="flex justify-end items-center">
+                      <a href="{{ url('/#how-to-order') }}" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
+                          aria-current="page">How to Order</a>
                     </li>
                     <li class="flex justify-end items-center">
                         {{-- <a href="#" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
@@ -69,19 +73,23 @@
                             <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
                                 aria-labelledby="dropdownLargeButton">
                                 <li>
-                                    <a href="#"
+                                    <a href="{{ url('/gallery/farm') }}"
                                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Our
                                         Farm</a>
                                 </li>
                                 <li>
-                                    <a href="#"
+                                    <a href="{{ url('/gallery/product') }}"
                                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Product</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="flex justify-end items-center">
-                        <a href="#" class="text-white bg-first px-4 py-3 lg:py-2 text-sm font-semibold"
+                      <a href="{{ url('/news') }}" class="text-gray-700 px-3 py-4 lg:py-2 text-sm font-semibold"
+                          aria-current="page">News</a>
+                    </li>
+                    <li class="flex justify-end items-center">
+                        <a href="{{ url('/contact-us') }}" class="text-white bg-first px-4 py-3 lg:py-2 text-sm font-semibold"
                             aria-current="page">Contact Us</a>
                     </li>
                 </ul>
