@@ -23,12 +23,14 @@ class FrontController extends Controller
 
     public function farm()
     {
-      return view('frontoffice2.gallery');
+      $galleries = Gallery::where(['status' => '1', 'category' => '0'])->latest()->take(6)->get();
+      return view('frontoffice2.gallery',compact('galleries'));
     } 
 
     public function product()
     {
-      return view('frontoffice2.gallery');
+      $galleries = Gallery::where(['status' => '1', 'category' => '1'])->latest()->take(6)->get();
+      return view('frontoffice2.gallery',compact('galleries'));      
     }    
 
     public function contact()

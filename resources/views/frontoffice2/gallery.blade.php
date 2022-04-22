@@ -25,46 +25,48 @@
   </div>
   <section class="overflow-hidden text-gray-700">
     <div class="container px-5 py-2 mx-auto my-10">      
-      <div class="flex flex-wrap -m-1 md:-m-2">
+      <div class="flex flex-wrap justify-center -m-1 md:-m-2">        
         <div class="flex flex-wrap w-1/2">
-          <div class="w-1/2 p-1 md:p-2">
-            <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" data-lightbox="image-1" data-title="My caption">
-              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp">
-            </a>            
-          </div>
-          <div class="w-1/2 p-1 md:p-2">
-            <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" data-lightbox="image-1" data-title="My caption">
-              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp">
-            </a>
-          </div>
-          <div class="w-full p-1 md:p-2">
-            <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" data-lightbox="image-1" data-title="My caption">
-              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp">
-            </a>
-          </div>
+          @foreach ($galleries as $gallery)
+            @if ($loop->iteration < 4)
+              @if ($loop->iteration < 3)
+                <div class="w-1/2 p-1 md:p-2">
+                  <a href="{{ url('images/gallery') }}/{{ $gallery->filename }}" data-lightbox="image-1" data-title="{{ $gallery->title }}">
+                    <img alt="{{ $gallery->title }}" class="block object-cover object-center w-full h-full rounded-lg"
+                    src="{{ url('images/gallery') }}/{{ $gallery->filename }}">
+                  </a>            
+                </div>
+              @else
+                <div class="w-full p-1 md:p-2">
+                  <a href="{{ url('images/gallery') }}/{{ $gallery->filename }}" data-lightbox="image-1" data-title="{{ $gallery->title }}">
+                    <img alt="{{ $gallery->title }}" class="block object-cover object-center w-full h-full rounded-lg"
+                      src="{{ url('images/gallery') }}/{{ $gallery->filename }}">
+                  </a>
+                </div>
+              @endif              
+            @endif                       
+          @endforeach                    
         </div>
         <div class="flex flex-wrap w-1/2">
-          <div class="w-full p-1 md:p-2">
-            <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp" data-lightbox="image-1" data-title="My caption">
-              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp">
-            </a>
-          </div>
-          <div class="w-1/2 p-1 md:p-2">
-            <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" data-lightbox="image-1" data-title="My caption">
-              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp">\
-            </a>
-          </div>
-          <div class="w-1/2 p-1 md:p-2">
-            <a href="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp" data-lightbox="image-1" data-title="My caption">
-              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp">
-            </a>
-          </div>
+          @foreach ($galleries as $gallery)
+            @if ($loop->iteration > 3 && $loop->iteration < 7)
+              @if ($loop->iteration > 3 && $loop->iteration < 5)                
+                <div class="w-full p-1 md:p-2">
+                  <a href="{{ url('images/gallery') }}/{{ $gallery->filename }}" data-lightbox="image-1" data-title="{{ $gallery->title }}">
+                    <img alt="{{ $gallery->title }}" class="block object-cover object-center w-full h-full rounded-lg"
+                    src="{{ url('images/gallery') }}/{{ $gallery->filename }}">
+                  </a>            
+                </div>
+              @else              
+                <div class="w-1/2 p-1 md:p-2">
+                  <a href="{{ url('images/gallery') }}/{{ $gallery->filename }}" data-lightbox="image-1" data-title="{{ $gallery->title }}">
+                    <img alt="{{ $gallery->title }}" class="block object-cover object-center w-full h-full rounded-lg"
+                      src="{{ url('images/gallery') }}/{{ $gallery->filename }}">
+                  </a>
+                </div>
+              @endif              
+            @endif                       
+          @endforeach                    
         </div>
       </div>
     </div>
@@ -74,12 +76,16 @@
       <div class="relative">
         <p class="text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsum consequuntur officia alias ipsa repellendus doloremque provident architecto aut corrupti distinctio eligendi dolorem ea atque repellat, repudiandae vero magnam fugiat.</p>
       </div>
-      <div class="flex mt-5">
-        <img class="w-1/5 p-2" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset="">
-        <img class="w-1/5 p-2" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset="">
-        <img class="w-1/5 p-2" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset="">
-        <img class="w-1/5 p-2" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset="">
-        <img class="w-1/5 p-2" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" srcset="">
+      <div class="flex flex-wrap justify-center mt-5">
+        @foreach ($galleries as $gallery)
+          @if ($loop->iteration > 1)
+          <div class="w-1/5 p-2">
+            <a href="{{ url('images/gallery') }}/{{ $gallery->filename }}" data-lightbox="image-1" data-title="{{ $gallery->title }}">
+              <img class="block object-cover object-center w-full h-64" src="{{ url('images/gallery') }}/{{ $gallery->filename }}" alt="{{ $gallery->title }}" srcset="">   
+            </a>
+          </div>
+          @endif     
+        @endforeach
       </div>
     </div>
   </section>

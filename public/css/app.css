@@ -2858,6 +2858,9 @@ input:checked + .toggle-bg {
 .h-16 {
   height: 4rem;
 }
+.h-64 {
+  height: 16rem;
+}
 .max-h-16 {
   max-height: 4rem;
 }
@@ -2931,6 +2934,9 @@ input:checked + .toggle-bg {
 }
 .w-64 {
   width: 16rem;
+}
+.w-1\/4 {
+  width: 25%;
 }
 .min-w-0 {
   min-width: 0px;
