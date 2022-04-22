@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', 'Add Section Home')
+@section('title', 'Add News')
 @section('content')
     <div class="flex flex-wrap">
         <div class="w-full px-4">

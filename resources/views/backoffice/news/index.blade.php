@@ -60,8 +60,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                      @if (count($news)> 0)
-                        @foreach ($news as $news)                        
+                      @if (count($newss)> 0)
+                        @foreach ($newss as $news)                        
                             <tr>
                               <th
                                   class="h-20 w-20 border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap m-4 text-left flex items-center">
@@ -106,7 +106,7 @@
                       @endif        
                     </tbody>
                 </table>
-                {!! $news->links('pagination::custom') !!}
+                {!! $newss->links('pagination::custom') !!}
             </div>
         </div>
     </div>

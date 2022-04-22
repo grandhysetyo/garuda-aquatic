@@ -9,8 +9,8 @@ class NewsController extends Controller
 {    
     public function index()
     {
-        $news = News::latest()->paginate(5);
-        return view('backoffice.news.index',compact('news'))
+        $newss = News::latest()->paginate(5);
+        return view('backoffice.news.index',compact('newss'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -28,8 +28,8 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',            
-            'description' => 'required',
+            'title' => 'required',        
+            'description' => 'required',     
             'filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -70,15 +70,15 @@ class NewsController extends Controller
     }
 
     public function toggleSlide($id, $status){
-      News::where('id',$id)->update(['status'=> $status]);
+        News::where('id',$id)->update(['status'=> $status]);
 
-      if($status == 1){
-          return redirect()->route('news')
-                      ->with('success','News turned on successfully');
-      }else{
-          return redirect()->route('news')
-                      ->with('success','News turned off successfully');
-      }        
+        if($status == 1){
+            return redirect()->route('news')
+                        ->with('success','News turned on successfully');
+        }else{
+            return redirect()->route('news')
+                        ->with('success','News turned off successfully');
+        }        
     }
 
     public function delete($id)

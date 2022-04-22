@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SliderController;
@@ -18,18 +19,10 @@ use App\Http\Controllers\NewsController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontoffice2.home');
-});
-Route::get('/gallery/farm', function () {
-    return view('frontoffice2.gallery');
-});
-Route::get('/gallery/product', function () {
-    return view('frontoffice2.gallery');
-});
-Route::get('/contact-us', function () {
-    return view('frontoffice2.contact');
-});
+Route::get('/', [FrontController::class, 'index']);
+Route::get('/gallery/farm', [FrontController::class, 'farm']);
+Route::get('/gallery/product', [FrontController::class, 'product']);
+Route::get('/contact-us', [FrontController::class, 'contact']);
 
 // Backoffice
 Route::get('/admin/login', [LoginController::class, 'login'])->name('login');
