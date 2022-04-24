@@ -23,6 +23,8 @@ Route::get('/', [FrontController::class, 'index']);
 Route::get('/gallery/farm', [FrontController::class, 'farm']);
 Route::get('/gallery/product', [FrontController::class, 'product']);
 Route::get('/contact-us', [FrontController::class, 'contact']);
+Route::get('/news', [FrontController::class, 'news']);
+Route::get('/news/{slug}/{id}', [FrontController::class, 'detailNews']);
 
 // Backoffice
 Route::get('/admin/login', [LoginController::class, 'login'])->name('login');

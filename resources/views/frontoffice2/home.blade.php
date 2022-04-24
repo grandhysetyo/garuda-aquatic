@@ -138,7 +138,7 @@
                                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 max-h-16">{{ \Illuminate\Support\Str::limit($new->title ?? '',40,' ...') }}</h5>
                                 </a>
                                 <p class="mb-3 font-normal text-gray-700 h-28">{{ \Illuminate\Support\Str::limit($new->description ?? '',200,' ...') }}</p>
-                                <a href="#"
+                                <a href="{{ url('news') }}/{{ \Illuminate\Support\Str::slug($new->title) }}/{{ $new->id }}"
                                     class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-first focus:ring-4 focus:outline-none focus:ring-blue-300">
                                     Read more
                                 </a>

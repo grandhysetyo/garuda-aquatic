@@ -43,9 +43,10 @@
                     type="button" onclick="toggleNavbar('example-collapse-sidebar')">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="md:block text-left md:pb-2 text-gray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+                <a class="flex items-center"
                     href="#">
-                    Garuda Aquatic
+                    <img src="{{ asset('images/logo.png') }}" class="mr-2 h-6 sm:h-9" alt="Flowbite Logo">
+                    <span class="self-center text-center text-base font-bold whitespace-nowrap">Garuda Aquatic</span>
                 </a>
                 <ul class="md:hidden items-center flex flex-wrap list-none">                    
                     <li class="inline-block relative">
@@ -104,14 +105,14 @@
                     <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                         <li class="items-center">
                             <a href="{{ url('/admin/dashboard') }}"
-                                class="{{ (request()->is('admin/dashboard')) ? 'text-second' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-second">
+                                class="{{ (request()->is('admin/dashboard')) ? 'text-first' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-first">
                                 <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
                                 Dashboard
                             </a>
                         </li>
                         <li class="items-center">
                             <a href="{{ url('/admin/slider') }}"
-                                class="{{ (request()->is('admin/slider*')) ? 'text-second' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-second">
+                                class="{{ (request()->is('admin/slider*')) ? 'text-first' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-first">
                                 <i class="fas fa-image mr-2 text-sm opacity-75"></i>
                                 Slider
                             </a>
@@ -119,7 +120,7 @@
 
                         <li class="items-center">
                             <a href="{{ url('/admin/home') }}"
-                                class="{{ (request()->is('admin/home')) ? 'text-second' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-second">
+                                class="{{ (request()->is('admin/home')) ? 'text-first' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-first">
                                 <i class="fas fa-home opacity-75 mr-2 text-sm"></i>                                
                                 Home
                             </a>
@@ -127,7 +128,7 @@
 
                         <li class="items-center">
                             <a href="{{ url('/admin/gallery') }}"
-                                class="{{ (request()->is('admin/gallery')) ? 'text-second' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-second">
+                                class="{{ (request()->is('admin/gallery')) ? 'text-first' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-first">
                                 <i class="fas fa-images opacity-75 mr-2 text-sm"></i>
                                 Gallery
                             </a>
@@ -135,7 +136,7 @@
 
                         <li class="items-center">
                             <a href="{{ url('/admin/news') }}"
-                                class="{{ (request()->is('admin/news')) ? 'text-second' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-second">
+                                class="{{ (request()->is('admin/news')) ? 'text-first' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-first">
                                 <i class="fas fa-newspaper opacity-75 mr-2 text-sm"></i>
                                 News
                             </a>

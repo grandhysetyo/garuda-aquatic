@@ -37,4 +37,16 @@ class FrontController extends Controller
     {
       return view('frontoffice2.contact');
     }
+
+    public function news()
+    {
+      $news = News::where('status', 1)->latest()->get();
+      return view('frontoffice2.news', compact('news'));
+    }
+
+    public function detailNews($slug, $id){
+      $news = News::where(['status' => '1', 'id' => $id])->get(); 
+      $latestnews = News::where('status', 1)->latest()->take(3)->get();
+      return view('frontoffice2.detail_news', compact('news','latestnews'));
+    }
 }
