@@ -7,6 +7,7 @@ use App\Models\Sliders;
 use App\Models\Gallery;
 use App\Models\Sections;
 use App\Models\News;
+use App\Models\Contact;
 
 class FrontController extends Controller
 {
@@ -48,5 +49,18 @@ class FrontController extends Controller
       $news = News::where(['status' => '1', 'id' => $id])->get(); 
       $latestnews = News::where('status', 1)->latest()->take(3)->get();
       return view('frontoffice2.detail_news', compact('news','latestnews'));
+    }
+
+    public function storeMessage(Request $request){
+      $request->validate([
+        'name' => 'required',   
+        'message' => 'required',                 
+        'email' => 'required',         
+      ]);
+
+      $input = $request->all();              
+      Contact::create($input);
+
+      return redirect()->route('frontContact')->with('success','Your messages send successfully.');
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ContactUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +23,8 @@ use App\Http\Controllers\NewsController;
 Route::get('/', [FrontController::class, 'index']);
 Route::get('/gallery/farm', [FrontController::class, 'farm']);
 Route::get('/gallery/product', [FrontController::class, 'product']);
-Route::get('/contact-us', [FrontController::class, 'contact']);
+Route::get('/contact-us', [FrontController::class, 'contact'])->name('frontContact');
+Route::post('/contact-us', [FrontController::class, 'storeMessage'])->name('storeMessage');
 Route::get('/news', [FrontController::class, 'news']);
 Route::get('/news/{slug}/{id}', [FrontController::class, 'detailNews']);
 
@@ -64,3 +66,7 @@ Route::post('/admin/news/store', [NewsController::class, 'store'])->name('store-
 Route::put('/admin/news/update/{id}', [NewsController::class, 'update'])->name('update-news')->middleware('auth');
 Route::get('/admin/news/delete/{id}', [NewsController::class, 'delete'])->name('delete-news')->middleware('auth');
 Route::get('/admin/news/toggle/{id}/{status}', [NewsController::class, 'toggleSlide'])->name('toggle-news')->middleware('auth');
+
+Route::get('/admin/messages', [ContactUsController::class, 'index'])->name('messages')->middleware('auth');
+Route::get('/admin/messages/reply/{id}', [ContactUsController::class, 'reply'])->name('reply-message')->middleware('auth');
+Route::post('/admin/messages/reply/{id}', [ContactUsController::class, 'sendMail'])->name('send-message')->middleware('auth');

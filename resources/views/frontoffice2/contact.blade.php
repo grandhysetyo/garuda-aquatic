@@ -116,7 +116,45 @@
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2">
-                    <form class="w-full max-w-lg mx-auto">
+                    @if ($errors->any())
+                        <div class="w-full max-w-lg mx-auto">
+                            <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-400">
+                                <span class="text-xl inline-block mr-5 align-middle">
+                                <i class="fas fa-bell"></i>
+                                </span>
+                                <span class="inline-block align-middle ml-3 mr-8">
+                                    <b class="capitalize">Whoops!</b> There were some problems with your input 
+                                    <ul class="list-disc">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </span>
+                                <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
+                                <span>×</span>              
+                                </button>
+                            </div>
+                        </div>                        
+                    @elseif ($message = Session::get('success'))
+                        <div class="w-full max-w-lg mx-auto">
+                            <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-green-400">
+                                <span class="text-xl inline-block mr-5 align-middle">
+                                    <i class="fas fa-bell"></i>
+                                </span>
+                                <span class="inline-block align-middle mr-8">
+                                    <b class="capitalize">Success!</b> {{ $message }}
+                                </span>
+                                <button
+                                    class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
+                                    onclick="closeAlert(event)">
+                                    <span>×</span>
+                                </button>
+                            </div>
+                        </div>
+                    @endif                    
+                    <form class="w-full max-w-lg mx-auto" action="{{ route('storeMessage') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="status" value="0" />
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -125,7 +163,7 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:ring-first focus:border-first"
-                                    id="grid-first-name" type="text" placeholder="Budi">
+                                    id="grid-first-name" name="name" type="text" placeholder="Budi">
                                 <p class="text-red-500 text-xs italic">Please fill out this field.</p>
                             </div>
                             <div class="w-full md:w-1/2 px-3">
@@ -135,7 +173,7 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:ring-first focus:border-first"
-                                    id="grid-last-name" type="text" placeholder="jhon@mail.com">
+                                    id="grid-last-name" type="text" name="email" placeholder="jhon@mail.com">
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-3 mb-6">
@@ -144,7 +182,7 @@
                                 <label for="message"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
                                     message</label>
-                                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-first focus:border-first"
+                                <textarea id="message" name="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-first focus:border-first"
                                     placeholder="Leave a comment..."></textarea>
 
                                 <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
@@ -162,5 +200,13 @@
 @endsection
 
 @section('script')
-
+<script type="text/javascript">
+    function closeAlert(event){
+        let element = event.target;
+        while(element.nodeName !== "BUTTON"){
+        element = element.parentNode;
+        }
+        element.parentNode.parentNode.removeChild(element.parentNode);
+    }
+</script>
 @endsection

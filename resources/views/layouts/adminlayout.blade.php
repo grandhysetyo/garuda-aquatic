@@ -141,6 +141,15 @@
                                 News
                             </a>
                         </li>
+
+                        <li class="items-center">
+                            <a href="{{ url('/admin/messages') }}"
+                                class="{{ (request()->is('admin/messages')) ? 'text-first' : 'text-gray-700' }} text-xs uppercase py-3 font-bold block hover:text-first" title="Reply Messages">                                
+                                <i class="fas fa-inbox opacity-75 mr-2 text-sm"></i>
+                                Messages
+                                {{-- <span class=" px-2 py-0.5 text-xs font-normal bg-red-600 rounded-full text-white">1</span> --}}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
