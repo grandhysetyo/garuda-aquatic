@@ -21,6 +21,16 @@ class ContactUsController extends Controller
     }
 
     public function sendMail(Request $request, $id){
-       
+        $request->validate([
+            'body' => 'required',                    
+        ]);
+
+        $body = $request->body;
+        $message = Contact::find($id); 
+        $details['body'] = $request->body;
+        $details['name'] = $message->name;        
+        \Mail::to($message->email)->send(new \App\Mail\HelperMail($details));
+
+        return redirect()->route('messages')->with('success','Your Mail has send successfuly.');
     }
 }
